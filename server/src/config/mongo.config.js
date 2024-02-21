@@ -2,6 +2,6 @@ const mongoose = require('mongoose');
 const config = require('./config.env')
 
 mongoose.set("strictQuery", false)
-mongoose.connect(`${config.db.url_db}`)
+mongoose.connect(process.env.URL_DB)
     .then(()=> console.log('Coneccion exitosa con la DB'))
     .catch(err => console.log('Ocurrio un error en la conexion con la base de datos ', err))
